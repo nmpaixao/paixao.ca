@@ -10,26 +10,28 @@
 
   <style>
     :root{
-      --bg1:#0b1220;
-      --bg2:#0f1b33;
-      --card: rgba(255,255,255,.07);
-      --card2: rgba(255,255,255,.05);
-      --text: rgba(255,255,255,.92);
-      --muted: rgba(255,255,255,.70);
-      --line: rgba(255,255,255,.14);
-      --shadow: 0 18px 60px rgba(0,0,0,.45);
+      --bg1:#eef2f7;
+      --bg2:#e6ecef;
+      --card: rgba(255,255,255,.75);
+      --card2: rgba(255,255,255,.55);
+      --text:#1f2937;
+      --muted:#4b5563;
+      --line: rgba(0,0,0,.10);
+      --accent:#5b8ea6;
+      --shadow: 0 18px 50px rgba(0,0,0,.12);
       --radius: 18px;
     }
 
     *{ box-sizing:border-box; }
     html,body{ height:100%; }
+
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       color: var(--text);
       background:
-        radial-gradient(900px 600px at 15% 20%, rgba(96,165,250,.20), transparent 60%),
-        radial-gradient(900px 600px at 80% 10%, rgba(167,139,250,.18), transparent 55%),
+        radial-gradient(900px 600px at 15% 15%, rgba(91,142,166,.25), transparent 60%),
+        radial-gradient(900px 600px at 85% 10%, rgba(148,163,184,.25), transparent 55%),
         linear-gradient(160deg, var(--bg1), var(--bg2));
       display:flex;
       align-items:center;
@@ -53,7 +55,6 @@
     .grid{
       display:grid;
       grid-template-columns: 1.25fr .95fr;
-      gap: 0;
     }
 
     @media (max-width: 860px){
@@ -63,9 +64,6 @@
     .left{
       padding: 34px 34px 28px;
     }
-    @media (max-width: 860px){
-      .left{ padding: 26px 22px 18px; }
-    }
 
     .right{
       padding: 34px;
@@ -73,8 +71,9 @@
       align-items:center;
       justify-content:center;
       border-left: 1px solid var(--line);
-      background: rgba(0,0,0,.10);
+      background: rgba(255,255,255,.35);
     }
+
     @media (max-width: 860px){
       .right{
         border-left: none;
@@ -96,6 +95,12 @@
       line-height: 1.55;
       color: var(--muted);
     }
+
+    a{
+      color: var(--accent);
+      text-decoration: none;
+    }
+    a:hover{ text-decoration: underline; }
 
     .facts{
       margin-top: 18px;
@@ -119,23 +124,16 @@
       height: 8px;
       border-radius: 999px;
       margin-top: 7px;
-      background: rgba(96,165,250,.85);
-      box-shadow: 0 0 0 4px rgba(96,165,250,.18);
+      background: var(--accent);
+      box-shadow: 0 0 0 4px rgba(91,142,166,.25);
       flex: 0 0 8px;
     }
-
-    a{
-      color: rgba(147,197,253,.95);
-      text-decoration: none;
-    }
-    a:hover{ text-decoration: underline; }
 
     .socials{
       margin-top: 18px;
       display:flex;
-      flex-wrap:wrap;
       gap: 10px;
-      align-items:center;
+      flex-wrap:wrap;
     }
 
     .icon{
@@ -143,28 +141,23 @@
       height: 44px;
       border-radius: 12px;
       border: 1px solid var(--line);
-      background: rgba(255,255,255,.06);
+      background: rgba(255,255,255,.65);
       display:flex;
       align-items:center;
       justify-content:center;
-      transition: transform .12s ease, background .12s ease, border-color .12s ease;
-      outline: none;
+      transition: transform .12s ease, box-shadow .12s ease;
     }
+
     .icon:hover{
       transform: translateY(-2px);
-      background: rgba(255,255,255,.09);
-      border-color: rgba(255,255,255,.22);
+      box-shadow: 0 8px 18px rgba(0,0,0,.12);
       text-decoration:none;
-    }
-    .icon:focus-visible{
-      box-shadow: 0 0 0 4px rgba(96,165,250,.35);
     }
 
     .icon img{
       width: 22px;
       height: 22px;
       display:block;
-      filter: drop-shadow(0 2px 6px rgba(0,0,0,.25));
     }
 
     .photo{
@@ -172,35 +165,24 @@
       aspect-ratio: 4 / 5;
       object-fit: cover;
       border-radius: 16px;
-      border: 1px solid rgba(255,255,255,.18);
-      box-shadow: 0 16px 50px rgba(0,0,0,.35);
-      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(0,0,0,.15);
+      box-shadow: 0 16px 40px rgba(0,0,0,.18);
+      background: rgba(255,255,255,.6);
     }
 
     .footer{
       padding: 14px 22px;
       border-top: 1px solid var(--line);
-      color: rgba(255,255,255,.55);
+      color: #6b7280;
       font-size: 12.5px;
-      display:flex;
-      justify-content:space-between;
-      gap: 12px;
-      flex-wrap:wrap;
-    }
-
-    .pill{
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      padding: 6px 10px;
-      background: rgba(255,255,255,.05);
-      color: rgba(255,255,255,.70);
+      text-align:right;
     }
   </style>
 </head>
 
 <body>
   <main class="wrap">
-    <section class="card" aria-label="Nuno Paixao landing page">
+    <section class="card">
       <div class="grid">
         <div class="left">
           <h1>Nuno Paixao</h1>
@@ -210,34 +192,33 @@
             <a href="https://ascendllp.com/" target="_blank" rel="noopener noreferrer">Ascend LLP</a>.
           </p>
 
-          <div class="facts" aria-label="Basic details">
+          <div class="facts">
             <div class="fact">
-              <span class="dot" aria-hidden="true"></span>
+              <span class="dot"></span>
               <span>
                 Based in
-                <a href="https://discoversaintjohn.com" target="_blank" rel="noopener noreferrer">Saint John, NB, Canada</a>.
+                <a href="https://discoversaintjohn.com" target="_blank" rel="noopener noreferrer">
+                  Saint John, NB, Canada
+                </a>.
               </span>
             </div>
             <div class="fact">
-              <span class="dot" aria-hidden="true"></span>
-              <span>Connect with me here:</span>
+              <span class="dot"></span>
+              <span>Connect with me:</span>
             </div>
           </div>
 
-          <nav class="socials" aria-label="Social links">
-            <a class="icon" href="mailto:nuno@paixao.ca" aria-label="Email Nuno" title="Email">
+          <nav class="socials">
+            <a class="icon" href="mailto:nuno@paixao.ca" title="Email">
               <img src="email.png" alt="" />
             </a>
-            <a class="icon" href="https://www.facebook.com/nmpaixao" target="_blank" rel="noopener noreferrer"
-               aria-label="Nuno on Facebook" title="Facebook">
+            <a class="icon" href="https://www.facebook.com/nmpaixao" target="_blank" rel="noopener noreferrer" title="Facebook">
               <img src="facebook.png" alt="" />
             </a>
-            <a class="icon" href="https://www.twitter.com/nunopaixao" target="_blank" rel="noopener noreferrer"
-               aria-label="Nuno on X" title="X">
+            <a class="icon" href="https://www.twitter.com/nunopaixao" target="_blank" rel="noopener noreferrer" title="X">
               <img src="x.png" alt="" />
             </a>
-            <a class="icon" href="https://www.linkedin.com/in/paixaonuno/" target="_blank" rel="noopener noreferrer"
-               aria-label="Nuno on LinkedIn" title="LinkedIn">
+            <a class="icon" href="https://www.linkedin.com/in/paixaonuno/" target="_blank" rel="noopener noreferrer" title="LinkedIn">
               <img src="linkedin.png" alt="" />
             </a>
           </nav>
@@ -249,8 +230,7 @@
       </div>
 
       <div class="footer">
-        <span class="pill">Simple. Secure. Low maintenance.</span>
-        <span>© <span id="y"></span> Nuno Paixao</span>
+        © <span id="y"></span> Nuno Paixao
       </div>
     </section>
   </main>
