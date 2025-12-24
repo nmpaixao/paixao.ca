@@ -1,35 +1,244 @@
-<HTML>
-<HEAD>
-<TITLE>Nuno Paixao</TITLE>
-<meta name="robots" content="noindex, nofollow">
-</HEAD>
-<BODY style="background-color:#e6ccb3;">
-<FONT FACE=ARIAL>
-<TABLE>
-<TR>
-<TD style="width:50%; padding:10px;vertical-align:top;text-align:center;">
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nuno Paixao</title>
 
-Hi. I am Nuno Paixao.<P>
+  <meta name="robots" content="noindex, nofollow" />
 
-I am Sr. Systems Administrator<BR>
-at <A HREF=https://ascendllp.com/>Ascend LLP</A>. <P>
+  <style>
+    :root{
+      --bg1:#eef2f7;
+      --bg2:#e6ecef;
+      --card: rgba(255,255,255,.75);
+      --card2: rgba(255,255,255,.55);
+      --text:#1f2937;
+      --muted:#4b5563;
+      --line: rgba(0,0,0,.10);
+      --accent:#5b8ea6;
+      --shadow: 0 18px 50px rgba(0,0,0,.12);
+      --radius: 18px;
+    }
 
-I live in <A HREF=https://discoversaintjohn.com>Saint John, NB, Canada</A>. <P>
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
 
-Here is how to find me:<p>
-&nbsp;
-<A HREF="mailto:nuno@paixao.ca"><IMG width="40" SRC=email.png></A> &nbsp;
-<A HREF=https://www.facebook.com/nmpaixao><IMG width="40" SRC=facebook.png></A> &nbsp;
-<A HREF=https://www.twitter.com/nunopaixao><IMG width="40" SRC=x.png></A> &nbsp;
-<A HREF=https://www.linkedin.com/in/paixaonuno/><IMG width="40" SRC=linkedin.png></A>
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color: var(--text);
+      background:
+        radial-gradient(900px 600px at 15% 15%, rgba(91,142,166,.25), transparent 60%),
+        radial-gradient(900px 600px at 85% 10%, rgba(148,163,184,.25), transparent 55%),
+        linear-gradient(160deg, var(--bg1), var(--bg2));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding: 28px 16px;
+    }
 
-&nbsp;<P>
+    .wrap{
+      width: min(980px, 100%);
+    }
 
-That's all folks...
-</TD>
-<TD style="width:50%; padding:10px;"><IMG SRC=nuno.jpg ALT="Photo of Nuno" WIDTH=300></TD>
-</TR>
-</TABLE>
-</FONT>
-</BODY>
-</HTML>
+    .card{
+      background: linear-gradient(180deg, var(--card), var(--card2));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      backdrop-filter: blur(10px);
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: .95fr 1.25fr;
+    }
+
+    @media (max-width: 860px){
+      .grid{ grid-template-columns: 1fr; }
+    }
+
+    .photo-wrap{
+      padding: 34px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background: rgba(255,255,255,.35);
+      border-right: 1px solid var(--line);
+    }
+
+    @media (max-width: 860px){
+      .photo-wrap{
+        border-right: none;
+        border-bottom: 1px solid var(--line);
+        padding: 24px 22px;
+      }
+    }
+
+    .content{
+      padding: 34px 34px 28px;
+    }
+
+    h1{
+      margin:0;
+      font-size: clamp(30px, 4vw, 44px);
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+    }
+
+    .bio{
+      margin: 14px 0 0;
+      font-size: 16px;
+      line-height: 1.55;
+      color: var(--muted);
+    }
+
+    a{
+      color: var(--accent);
+      text-decoration: none;
+    }
+    a:hover{ text-decoration: underline; }
+
+    .facts{
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+      display:grid;
+      gap: 10px;
+    }
+
+    .fact{
+      display:flex;
+      gap: 10px;
+      align-items:flex-start;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.45;
+    }
+
+    .dot{
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      margin-top: 7px;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px rgba(91,142,166,.25);
+      flex: 0 0 8px;
+    }
+
+    .socials{
+      margin-top: 18px;
+      display:flex;
+      gap: 10px;
+      flex-wrap:wrap;
+    }
+
+    .icon{
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.65);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      transition: transform .12s ease, box-shadow .12s ease;
+    }
+
+    .icon:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(0,0,0,.12);
+      text-decoration:none;
+    }
+
+    .icon img{
+      width: 22px;
+      height: 22px;
+      display:block;
+    }
+
+    .photo{
+      width: min(320px, 100%);
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      border-radius: 16px;
+      border: 1px solid rgba(0,0,0,.15);
+      box-shadow: 0 16px 40px rgba(0,0,0,.18);
+      background: rgba(255,255,255,.6);
+    }
+
+    .footer{
+      padding: 14px 22px;
+      border-top: 1px solid var(--line);
+      color: #6b7280;
+      font-size: 12.5px;
+      text-align:right;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="wrap">
+    <section class="card">
+      <div class="grid">
+
+        <!-- PHOTO (LEFT) -->
+        <div class="photo-wrap">
+          <img class="photo" src="nuno.jpg" alt="Photo of Nuno Paixao" width="320" height="400" />
+        </div>
+
+        <!-- TEXT (RIGHT) -->
+        <div class="content">
+          <h1>Nuno Paixao</h1>
+
+          <p class="bio">
+            Senior Systems Administrator at
+            <a href="https://ascendllp.com/" target="_blank" rel="noopener noreferrer">Ascend LLP</a>.
+          </p>
+
+          <div class="facts">
+            <div class="fact">
+              <span class="dot"></span>
+              <span>
+                Based in
+                <a href="https://discoversaintjohn.com" target="_blank" rel="noopener noreferrer">
+                  Saint John, NB, Canada
+                </a>.
+              </span>
+            </div>
+            <div class="fact">
+              <span class="dot"></span>
+              <span>Connect with me:</span>
+            </div>
+          </div>
+
+          <nav class="socials">
+            <a class="icon" href="mailto:nuno@paixao.ca" title="Email">
+              <img src="email.png" alt="" />
+            </a>
+            <a class="icon" href="https://www.facebook.com/nmpaixao" target="_blank" rel="noopener noreferrer" title="Facebook">
+              <img src="facebook.png" alt="" />
+            </a>
+            <a class="icon" href="https://www.twitter.com/nunopaixao" target="_blank" rel="noopener noreferrer" title="X">
+              <img src="x.png" alt="" />
+            </a>
+            <a class="icon" href="https://www.linkedin.com/in/paixaonuno/" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+              <img src="linkedin.png" alt="" />
+            </a>
+          </nav>
+        </div>
+      </div>
+
+      <div class="footer">
+        © <span id="y"></span> Nuno Paixao
+      </div>
+    </section>
+  </main>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
